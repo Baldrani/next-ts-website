@@ -1,5 +1,6 @@
 import * as React from "react";
-import Layout from "../components/layout"
+import Layout from "../components/layout";
+import Starships from "../components/starship";
 
 interface CardProps {
     Title: string
@@ -10,6 +11,7 @@ interface CardProps {
 const Card: React.FC<CardProps> =
     () => (
         <Layout>
+            {Starships}
             <div>test</div>
         </Layout>
     )
