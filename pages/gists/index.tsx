@@ -1,20 +1,28 @@
-import * as React from "react"
-import Layout from "../../components/layout"
+import * as Next from 'next';
+import { fetchUsers } from '../../rest-api/github';
+import { User } from '../../models/user';
+import Layout from "../../components/layout";
 
-fetch(`${process.env.GIT_API}`)
-    .then(res => res.json())
-    .then(res => {
-        console.log(res)
-    })
-    .catch(error => console.error(error));
+interface Props {
+   users: User[];
+}
 
-const Gists: React.FC =
-    () => (
-        <Layout>
-            <ul>
-                {/* GistsList.map((gist: any) => console.log(gist)) */}
-            </ul>
-        </Layout>
-    )
+const Gists<Props> = ({user}) => (
+    <Layout>
+        <ul>
+            { props.users.map((user) => <li>{user.id}</li>) }
+            {/* GistsList.map((gist: any) => console.log(gist)) */}
+        </ul>
+    </Layout>
+)
+
+Gists.getInitialProps = async () => {
+    const users = await fetchUsers();
+    console.log(users);
+    return {
+        users,
+    }
+}
+
 
 export default Gists

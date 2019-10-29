@@ -15,3 +15,25 @@ module.exports = withCSS(withSass({
         return config;
     }
 }));
+
+/*
+  resolve: {
+    alias: {
+      '@': '/Users/mael/Work/SPS/shareprintstudio-front/src',
+      vue$: 'vue/dist/vue.runtime.esm.js'
+    },
+    extensions: [
+      '.mjs',
+      '.js',
+      '.jsx',
+      '.vue',
+      '.json',
+      '.wasm'
+    ],
+    modules: [
+      'node_modules',
+      '/Users/mael/Work/SPS/shareprintstudio-front/node_modules',
+      '/Users/mael/Work/SPS/shareprintstudio-front/node_modules/@vue/cli-service/node_modules'
+    ]
+  },
+ */
