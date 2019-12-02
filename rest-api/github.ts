@@ -1,4 +1,4 @@
-import { User } from '../model/user';
+import { User } from '../models/user';
 import fetch from 'isomorphic-unfetch';
 
 const baseRoot = 'https://api.github.com/orgs/lemoncode';
@@ -9,6 +9,7 @@ export const fetchUsers = async (): Promise<User[]> => {
     const data = await res.json();
 
     return data.map(
+        //@ts-ignore
         ({ id, login, avatar_url, }) => ({ id, login, avatar_url, } as User)
     );
 }
