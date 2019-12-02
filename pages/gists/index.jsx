@@ -1,16 +1,15 @@
-import * as Next from 'next';
 import { fetchUsers } from '../../rest-api/github';
 import { User } from '../../models/user';
 import Layout from "../../components/layout";
 
-interface Props {
-   users: User[];
-}
+// interface Props {
+//    users: User[];
+// }
 
-const Gists<Props> = ({user}) => (
+const Gists= ({users: users}) => (
     <Layout>
         <ul>
-            { props.users.map((user) => <li>{user.id}</li>) }
+            {/*{ users.map((user: any) => <li>{user.id}</li>) }*/}
             {/* GistsList.map((gist: any) => console.log(gist)) */}
         </ul>
     </Layout>
